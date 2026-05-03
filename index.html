@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildFlow – App til Entreprenørvirksomheder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CANVAS BACKGROUND -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">⬡</span>
+        <span>Build<strong>Flow</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Funktioner</a></li>
+        <li><a href="#how">Sådan virker det</a></li>
+        <li><a href="#pricing">Priser</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+      <a href="#pricing" class="btn btn-nav">Prøv gratis</a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#features">Funktioner</a>
+      <a href="#how">Sådan virker det</a>
+      <a href="#pricing">Priser</a>
+      <a href="#contact">Kontakt</a>
+      <a href="#pricing" class="btn btn-orange">Prøv gratis</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="badge reveal">
+        <span class="badge-dot"></span>
+        Nyt i 2025 · AI-drevet projektledelse
+      </div>
+      <h1 class="reveal">
+        Styr hele din<br />
+        <span class="gradient-text">entreprenørvirksomhed</span><br />
+        fra ét sted
+      </h1>
+      <p class="hero-sub reveal">
+        BuildFlow samler projekter, mandskab, økonomi og dokumentation i én app
+        — bygget specielt til den danske byggebranche.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#pricing" class="btn btn-orange btn-lg pulse-btn">
+          Start gratis i dag
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how" class="btn btn-ghost btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          Se demo
+        </a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-num" data-target="1200">0</span>
+          <span class="stat-label">Aktive virksomheder</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="98">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Kundetilfredshed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="4">0</span><span class="stat-suffix">x</span>
+          <span class="stat-label">Hurtigere fakturering</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-mockup reveal-right">
+      <div class="phone-shell">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="app-header">
+            <span>Dashboard</span>
+            <div class="app-avatar">JS</div>
+          </div>
+          <div class="app-card orange">
+            <div class="app-card-label">Aktive projekter</div>
+            <div class="app-card-value">14</div>
+            <div class="app-card-bar"><div class="app-card-fill" style="width:72%"></div></div>
+          </div>
+          <div class="app-row">
+            <div class="app-mini-card">
+              <div class="app-mini-icon yellow">⏱</div>
+              <div>
+                <div class="app-mini-label">Timer i dag</div>
+                <div class="app-mini-val">247</div>
+              </div>
+            </div>
+            <div class="app-mini-card">
+              <div class="app-mini-icon green">✓</div>
+              <div>
+                <div class="app-mini-label">Opgaver</div>
+                <div class="app-mini-val">38/42</div>
+              </div>
+            </div>
+          </div>
+          <div class="app-project-list">
+            <div class="app-project-item">
+              <div class="app-project-dot green-dot"></div>
+              <div class="app-project-name">Rådhuspladsen 4</div>
+              <div class="app-project-progress">87%</div>
+            </div>
+            <div class="app-project-item">
+              <div class="app-project-dot orange-dot"></div>
+              <div class="app-project-name">Havnegade Blok B</div>
+              <div class="app-project-progress">54%</div>
+            </div>
+            <div class="app-project-item">
+              <div class="app-project-dot blue-dot"></div>
+              <div class="app-project-name">Lyngby Erhverv</div>
+              <div class="app-project-progress">23%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="float-card float-card-1 glass reveal-float">
+        <span class="float-icon">💶</span>
+        <div>
+          <div class="float-label">Faktura sendt</div>
+          <div class="float-val">+124.500 kr.</div>
+        </div>
+      </div>
+      <div class="float-card float-card-2 glass reveal-float-2">
+        <span class="float-icon">👷</span>
+        <div>
+          <div class="float-label">Mandskab online</div>
+          <div class="float-val">12 medarbejdere</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE LOGOS -->
+  <div class="marquee-section">
+    <p class="marquee-label">Betroet af Danmarks ledende entreprenørvirksomheder</p>
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span>MT Højgaard</span><span>Enemærke & Petersen</span><span>Per Aarsleff</span>
+        <span>NCC Danmark</span><span>Skanska</span><span>Pihl & Søn</span>
+        <span>Aarsleff Rail</span><span>Arkil</span><span>Hoffmann</span>
+        <!-- duplicate for infinite loop -->
+        <span>MT Højgaard</span><span>Enemærke & Petersen</span><span>Per Aarsleff</span>
+        <span>NCC Danmark</span><span>Skanska</span><span>Pihl & Søn</span>
+        <span>Aarsleff Rail</span><span>Arkil</span><span>Hoffmann</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="section-header reveal">
+      <div class="section-tag">Funktioner</div>
+      <h2>Alt du behøver – intet du ikke gør</h2>
+      <p>Bygget i tæt samarbejde med over 200 danske håndværksmestre og projektledere.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card glass reveal" data-delay="0">
+        <div class="feature-icon icon-orange">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3>Projektoverblik</h3>
+        <p>Gantt-diagram, milepæle og realtidsstatus. Se alle projekter på ét dashboard – fra udgravning til aflevering.</p>
+        <div class="feature-tag">Gantt · Kanban · Tidsplan</div>
+      </div>
+
+      <div class="feature-card glass reveal" data-delay="100">
+        <div class="feature-icon icon-yellow">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+        </div>
+        <h3>Mandskabsstyring</h3>
+        <p>Planlæg vagtskemaer, track fremmøde med GPS og administrer kompetencer og certifikater for hele din stab.</p>
+        <div class="feature-tag">GPS · Vagtplan · Kompetencer</div>
+      </div>
+
+      <div class="feature-card glass reveal" data-delay="200">
+        <div class="feature-icon icon-green">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Materialestyring</h3>
+        <p>Hold styr på lager, bestillinger og leverancer. Automatiske advarsler når materialer løber lavt på pladsen.</p>
+        <div class="feature-tag">Lager · Ordrer · QR-scan</div>
+      </div>
+
+      <div class="feature-card glass reveal" data-delay="0">
+        <div class="feature-icon icon-blue">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+        </div>
+        <h3>Automatisk fakturering</h3>
+        <p>Generer fakturaer direkte fra tidsregistreringer og materialer. Send til kunden med ét klik – integreret med e-conomic.</p>
+        <div class="feature-tag">e-conomic · EAN · PDF</div>
+      </div>
+
+      <div class="feature-card glass reveal" data-delay="100">
+        <div class="feature-icon icon-purple">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Kommunikation</h3>
+        <p>Byg-chat med grupper pr. projekt. Del tegninger, fotos og dokumenter direkte i appen – ingen løse mails mere.</p>
+        <div class="feature-tag">Chat · Filer · Notifikationer</div>
+      </div>
+
+      <div class="feature-card glass reveal feature-card-wide" data-delay="200">
+        <div class="feature-icon icon-orange">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+        </div>
+        <h3>AI-rapportering</h3>
+        <p>Bygget-in AI analyserer dine projekter, forudsiger forsinkelser og foreslår ressourceoptimeringer – så du altid er et skridt foran.</p>
+        <div class="feature-tag">Prognose · Afvigelse · Økonomi</div>
+        <div class="ai-badge">✦ AI-drevet</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="how-section">
+    <div class="section-header reveal">
+      <div class="section-tag">Kom i gang</div>
+      <h2>Oppe at køre på 15 minutter</h2>
+      <p>Ingen lang onboarding. Importér din eksisterende data og begynd med det samme.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal" data-delay="0">
+        <div class="step-number">01</div>
+        <div class="step-content glass">
+          <h3>Opret din virksomhed</h3>
+          <p>Tilføj firmanavn, logo og dine første medarbejdere. Invitér dem via SMS eller e-mail.</p>
+        </div>
+      </div>
+      <div class="step-arrow reveal" data-delay="50">→</div>
+      <div class="step reveal" data-delay="100">
+        <div class="step-number">02</div>
+        <div class="step-content glass">
+          <h3>Opret første projekt</h3>
+          <p>Indtast adresse, deadline og budget. Tildel projektleder og hold og sæt milepæle.</p>
+        </div>
+      </div>
+      <div class="step-arrow reveal" data-delay="150">→</div>
+      <div class="step reveal" data-delay="200">
+        <div class="step-number">03</div>
+        <div class="step-content glass">
+          <h3>Gå i gang</h3>
+          <p>Medarbejderne registrerer tid, bruger materialer og kommunikerer – alt samles automatisk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="section-header reveal">
+      <div class="section-tag">Anmeldelser</div>
+      <h2>Hvad byggebranchen siger</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial glass reveal" data-delay="0">
+        <div class="stars">★★★★★</div>
+        <p>"Vi har sparet 12 timer om ugen på administration alene. Faktureringen sker næsten automatisk nu."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#f97316">MH</div>
+          <div>
+            <strong>Mads Henriksen</strong>
+            <span>Direktør, Henriksen Byg ApS</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial glass reveal" data-delay="100">
+        <div class="stars">★★★★★</div>
+        <p>"Endelig et system der er lavet til håndværkere og ikke kontorfolk. Mine mænd elsker appen på pladsen."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#3b82f6">LN</div>
+          <div>
+            <strong>Lars Nielsen</strong>
+            <span>Mester, Nielsen & Sønner</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial glass reveal" data-delay="200">
+        <div class="stars">★★★★★</div>
+        <p>"GPS-tracking af mandskab og den automatiske fraværsregistrering har løst et kæmpe problem for os."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#22c55e">AJ</div>
+          <div>
+            <strong>Anette Jensen</strong>
+            <span>HR-chef, Byg & Anlæg A/S</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="section-header reveal">
+      <div class="section-tag">Priser</div>
+      <h2>Simpel og gennemsigtig prissætning</h2>
+      <p>Ingen skjulte gebyrer. Opsig når som helst.</p>
+    </div>
+    <div class="pricing-toggle reveal">
+      <span id="toggle-monthly" class="toggle-active">Månedlig</span>
+      <label class="switch">
+        <input type="checkbox" id="billingToggle" />
+        <span class="slider"></span>
+      </label>
+      <span id="toggle-yearly">Årlig <span class="save-badge">Spar 20%</span></span>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card glass reveal" data-delay="0">
+        <div class="pricing-tier">Starter</div>
+        <div class="pricing-price">
+          <span class="price-val" data-monthly="299" data-yearly="239">299</span>
+          <span class="price-unit">kr/md</span>
+        </div>
+        <div class="pricing-desc">Op til 5 brugere</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 3 aktive projekter</li>
+          <li><span class="check">✓</span> Tidsregistrering</li>
+          <li><span class="check">✓</span> Basis rapporter</li>
+          <li><span class="check">✓</span> 5 GB lagerplads</li>
+          <li><span class="cross">✗</span> AI-analyser</li>
+          <li><span class="cross">✗</span> e-conomic integration</li>
+        </ul>
+        <a href="#" class="btn btn-ghost btn-full">Kom i gang</a>
+      </div>
+      <div class="pricing-card glass pricing-popular reveal" data-delay="100">
+        <div class="popular-badge">Mest populær</div>
+        <div class="pricing-tier">Pro</div>
+        <div class="pricing-price">
+          <span class="price-val" data-monthly="799" data-yearly="639">799</span>
+          <span class="price-unit">kr/md</span>
+        </div>
+        <div class="pricing-desc">Op til 25 brugere</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Ubegrænsede projekter</li>
+          <li><span class="check">✓</span> GPS-mandskabsstyring</li>
+          <li><span class="check">✓</span> Automatisk fakturering</li>
+          <li><span class="check">✓</span> e-conomic integration</li>
+          <li><span class="check">✓</span> AI-rapportering</li>
+          <li><span class="check">✓</span> 100 GB lagerplads</li>
+        </ul>
+        <a href="#" class="btn btn-orange btn-full">Start 14-dages gratis prøve</a>
+      </div>
+      <div class="pricing-card glass reveal" data-delay="200">
+        <div class="pricing-tier">Enterprise</div>
+        <div class="pricing-price">
+          <span class="price-val price-custom">Kontakt os</span>
+        </div>
+        <div class="pricing-desc">Ubegrænsede brugere</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Alt i Pro</li>
+          <li><span class="check">✓</span> Dedicated onboarding</li>
+          <li><span class="check">✓</span> Tilpassede integrationer</li>
+          <li><span class="check">✓</span> SLA-garanti</li>
+          <li><span class="check">✓</span> Ubegrænset lager</li>
+          <li><span class="check">✓</span> Prioriteret support</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-full">Kontakt salg</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-section reveal">
+    <div class="cta-inner glass">
+      <div class="cta-glow"></div>
+      <h2>Klar til at tage kontrollen<br />over dine projekter?</h2>
+      <p>Slut dig til 1.200+ entreprenørvirksomheder der allerede bruger BuildFlow.</p>
+      <a href="#pricing" class="btn btn-orange btn-lg pulse-btn">
+        Start gratis – ingen kreditkort
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <div class="section-tag">Kontakt</div>
+      <h2>Skriv til os</h2>
+      <p>Vi svarer inden for én hverdag.</p>
+    </div>
+    <form class="contact-form glass reveal" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Navn</label>
+          <input type="text" placeholder="Jens Jensen" required />
+        </div>
+        <div class="form-group">
+          <label>Virksomhed</label>
+          <input type="text" placeholder="Jensen Byg ApS" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" placeholder="jens@jensenbyg.dk" required />
+        </div>
+        <div class="form-group">
+          <label>Telefon</label>
+          <input type="tel" placeholder="+45 12 34 56 78" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Besked</label>
+        <textarea placeholder="Fortæl os om din virksomhed og hvad du har brug for..." rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn btn-orange btn-lg">
+        Send besked
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+      </button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon">⬡</span>
+          <span>Build<strong>Flow</strong></span>
+        </a>
+        <p>Bygget til den danske byggebranche.<br />Fra fundament til nøgle.</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Produkt</h4>
+        <a href="#features">Funktioner</a>
+        <a href="#pricing">Priser</a>
+        <a href="#">Changelog</a>
+        <a href="#">Roadmap</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ressourcer</h4>
+        <a href="#">Dokumentation</a>
+        <a href="#">API</a>
+        <a href="#">Blog</a>
+        <a href="#">Webinarer</a>
+      </div>
+      <div class="footer-col">
+        <h4>Virksomhed</h4>
+        <a href="#">Om os</a>
+        <a href="#contact">Kontakt</a>
+        <a href="#">Karriere</a>
+        <a href="#">Presse</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 BuildFlow ApS · CVR 44 44 44 44</span>
+      <div>
+        <a href="#">Privatlivspolitik</a>
+        <a href="#">Handelsbetingelser</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
